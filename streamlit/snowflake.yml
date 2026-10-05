@@ -1,0 +1,23 @@
+definition_version: 2
+entities:
+  streamlit_app:
+    type: streamlit
+    main_file: FINAL_CUSTOMER_360APP.py
+    query_warehouse: COMPUTE_WH
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    artifacts:
+      - pyproject.toml
+      - FINAL_CUSTOMER_360APP.py
+      - .streamlit/config.toml
+    identifier:
+      database: AIRBNB
+      schema: GOLD
+      name: STREAMLIT
+    title: streamlit
+    run_mode: SpcsOnly
+    execute_as: OWNER
+    artifact_repositories:
+      - SNOWFLAKE.SNOWPARK.PYPI_SHARED_REPOSITORY
+    sharing:
+      - role: ACCOUNTADMIN
+        with_grant_option: true
